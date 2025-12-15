@@ -62,26 +62,26 @@ Projeniz, Derin Öğrenme modellerini bir araya getiren, kullanıcı ve yönetic
 ### 1. Kullanıcı Giriş ve Ana Analiz Ekranı (Frontend Girişi)
 Uygulama, güvenli bir kullanıcı tabanı oluşturmak için giriş/kayıt ekranları ile başlar. Ana Sayfa, kullanıcıya MR görüntüsünü yüklemesi için yalın ve anlaşılır bir arayüz sunar.
 
-|                Giriş Ekranı                |              Ana Yükleme Ekranı               |
-|:------------------------------------------:|:---------------------------------------------:|
-| ![Kullanıcı Giriş/Kayıt Ekranı](giris.png) | ![MR Görüntüsü Yükleme Arayüzü](anasayfa.png) |
+| Giriş Ekranı | Ana Yükleme Ekranı |
+| :---: | :---: |
+| ![Kullanıcı Giriş/Kayıt Ekranı](docs/giris.png) | ![MR Görüntüsü Yükleme Arayüzü](docs/anasayfa.png) |
 
 <br>
 
 ### 2. Analiz Sonucu (Risk Tespiti)
-Kullanıcı MR görüntüsünü yükledikten ve model (Detector) çalıştığında, sonuçlar net bir risk skoru ve görsel çıktı ile sunulur. Bu ekran, teşhiste güven skorunun ve görsel teyidin önemini vurgular.
+Kullanıcı MR görüntüsünü yükledikten ve model (Detector) çalıştığında, sonuçlar net bir risk skoru ve görsel çıktı ile sunulur.
 
-* **Risk Skoru:** Modelin güven oranı (%3.38 DÜŞÜK RİSK).
+* **Risk Skoru:** Modelin güven oranı (%3.38 DÜŞÜK RİSK) anında gösterilir.
 * **Görsel Teyit:** Orijinal görüntü ile yapay zeka tarafından işlenmiş ısı haritası (Risk Analizi) yan yana gösterilir.
 
-![Model Analiz Sonucu ve Isı Haritası](analiz.png)
+![Model Analiz Sonucu ve Isı Haritası](docs/analiz.png)
 
 <br>
 
 ### 3. Yönetici Paneli ve Raporlama (Sistem Yönetimi ve Veri Kaydı)
-Bu bölüm, projenin sadece bir prototip değil, aynı zamanda operasyonel bir sistem olduğunu gösterir. Yönetici paneli, sistemin genel durumu ve geçmiş tarama kayıtlarının takibi için hayati önem taşır.
+Yönetici paneli, sistemin genel durumu ve geçmiş tarama kayıtlarının takibi için hayati önem taşır.
 
 * **Genel Durum:** Toplam kullanıcı, analiz sayısı ve sistem durumu anlık takip edilir.
-* **Kayıt ve Raporlama:** Her tarama, hasta adı, tarih, risk sonucu, sayısal skor ve **PDF rapor** oluşturma seçeneğiyle birlikte kayıt altında tutulur. Bu, tıbbi arşivleme yeteneğini gösterir.
+* **Kayıt ve Raporlama:** Her tarama, hasta adı, tarih, risk sonucu, sayısal skor ve PDF rapor oluşturma seçeneğiyle birlikte kayıt altında tutulur.
 
-![Hastane Genel Durumu ve Raporlama Paneli](adminPaneli.png)
+![Hastane Genel Durumu ve Raporlama Paneli](docs/adminPaneli.png)
