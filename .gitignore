@@ -1,0 +1,14 @@
+# Veri setlerini yoksay
+dataset/
+random_data/
+validator_data/
+*.zip
+
+# Sistem dosyalarini yoksay
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+
+# Sanal ortam dosyalarini yoksay
+venv/
+env/

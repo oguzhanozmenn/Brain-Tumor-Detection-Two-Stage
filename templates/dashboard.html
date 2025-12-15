@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Geçmiş Taramalarım</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="/"><i class="fa-solid fa-brain"></i> AI Sağlık</a>
+        <div>
+            <a href="/" class="btn btn-light btn-sm me-2">Yeni Analiz</a>
+            <a href="/logout" class="btn btn-danger btn-sm">Çıkış</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h2 class="mb-4"><i class="fa-solid fa-clock-rotate-left"></i> Geçmiş Tarama Kayıtları</h2>
+
+    {% if reports %}
+    <div class="table-responsive bg-white p-3 rounded shadow-sm">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Tarih</th>
+                    <th>Görüntü (İşlenmiş)</th>
+                    <th>Risk Durumu</th>
+                    <th>Risk Skoru</th>
+                    <th>Rapor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ report.date.strftime('%d.%m.%Y %H:%M') }}</td>
+                    <td>
+                        <img src="{{ report.processed_path }}" width="80" class="rounded border" onclick="window.open(this.src)" style="cursor:pointer">
+                    </td>
+                    <td>
+                        {% if report.risk_score > 50 %}
+                            <span class="badge bg-danger">Yüksek Risk</span>
+                        {% else %}
+                            <span class="badge bg-success">Temiz</span>
+                        {% endif %}
+                    </td>
+                    <td class="fw-bold">%{{ report.risk_score }}</td>
+                    <td>
+                        <a href="{{ report.pdf_path }}" download class="btn btn-outline-primary btn-sm">
+                            <i class="fa-solid fa-file-pdf"></i> İndir
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <div class="alert alert-info">Henüz hiç analiz yapmamışsınız. Hemen <a href="/">ilk analizi başlatın!</a></div>
+    {% endif %}
+</div>
+
+</body>
+</html>
