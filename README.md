@@ -53,3 +53,35 @@ Sistem, hatalı veri girişini engelleyen yenilikçi bir yapıda çalışır.
 
 * Segmentasyon: Tümörün sadece varlığını değil, MR görüntüsü üzerinde tam konumunu işaretleme.
 * Mobil Uyumlu Arayüz Geliştirme.
+## 🖼️ Uygulama Arayüzü ve İş Akışı Görselleştirme
+
+Projeniz, Derin Öğrenme modellerini bir araya getiren, kullanıcı ve yönetici panellerine sahip, tam fonksiyonlu bir Flask web uygulaması olarak tasarlanmıştır.
+
+---
+
+### 1. Kullanıcı Giriş ve Ana Analiz Ekranı (Frontend Girişi)
+Uygulama, güvenli bir kullanıcı tabanı oluşturmak için giriş/kayıt ekranları ile başlar. Ana Sayfa, kullanıcıya MR görüntüsünü yüklemesi için yalın ve anlaşılır bir arayüz sunar.
+
+|                Giriş Ekranı                |              Ana Yükleme Ekranı               |
+|:------------------------------------------:|:---------------------------------------------:|
+| ![Kullanıcı Giriş/Kayıt Ekranı](giris.png) | ![MR Görüntüsü Yükleme Arayüzü](anasayfa.png) |
+
+<br>
+
+### 2. Analiz Sonucu (Risk Tespiti)
+Kullanıcı MR görüntüsünü yükledikten ve model (Detector) çalıştığında, sonuçlar net bir risk skoru ve görsel çıktı ile sunulur. Bu ekran, teşhiste güven skorunun ve görsel teyidin önemini vurgular.
+
+* **Risk Skoru:** Modelin güven oranı (%3.38 DÜŞÜK RİSK).
+* **Görsel Teyit:** Orijinal görüntü ile yapay zeka tarafından işlenmiş ısı haritası (Risk Analizi) yan yana gösterilir.
+
+![Model Analiz Sonucu ve Isı Haritası](analiz.png)
+
+<br>
+
+### 3. Yönetici Paneli ve Raporlama (Sistem Yönetimi ve Veri Kaydı)
+Bu bölüm, projenin sadece bir prototip değil, aynı zamanda operasyonel bir sistem olduğunu gösterir. Yönetici paneli, sistemin genel durumu ve geçmiş tarama kayıtlarının takibi için hayati önem taşır.
+
+* **Genel Durum:** Toplam kullanıcı, analiz sayısı ve sistem durumu anlık takip edilir.
+* **Kayıt ve Raporlama:** Her tarama, hasta adı, tarih, risk sonucu, sayısal skor ve **PDF rapor** oluşturma seçeneğiyle birlikte kayıt altında tutulur. Bu, tıbbi arşivleme yeteneğini gösterir.
+
+![Hastane Genel Durumu ve Raporlama Paneli](adminPaneli.png)
